@@ -1,18 +1,108 @@
-# Build and Release Folders
-bin-debug/
-bin-release/
-[Oo]bj/
-[Bb]in/
+Skip to content
+Search or jump to…
 
-# Other files and folders
-.settings/
+Pull requests
+Issues
+Marketplace
+Explore
 
-# Executables
-*.swf
-*.air
-*.ipa
-*.apk
+@DonMaier
+ionic-team
+/
+ionic
+1.8k
+40.9k13.2k
+ Code
+ Issues 770
+ Pull requests 75 Actions
+ Projects 3
+ Security 0
+ Insights
+ionic/.gitignore
+@manucorporat manucorporat Master react (#18998)
+930b271 on 13 Aug 2019
+@adamdbradley@manucorporat@danbucholtz@brandyscarney@mlynch@ajoslin@tlancina@perrygovier@devversion@mhartington@Ionitron@camwiegert
+66 lines (59 sloc)  890 Bytes
 
-# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
-# should NOT be excluded as they contain compiler settings and other important
-# information for Eclipse / Flash Builder.
+*~
+*.sw[mnpcod]
+*.log
+*.lock
+*.tmp
+*.tmp.*
+log.txt
+*.sublime-project
+*.sublime-workspace
+
+.idea/
+.vscode/
+.sass-cache/
+.versions/
+coverage/
+collection/
+dist/
+dist-transpiled/
+node_modules/
+tmp/
+temp/
+core/theme-builder/
+core/test-components/
+core/css/
+angular/css/
+$RECYCLE.BIN/
+
+.DS_Store
+Thumbs.db
+UserInterfaceState.xcuserstate
+.env
+
+.package.tmp.json
+
+src/themes/version.scss
+scripts/e2e/webpackEntryPoints.json
+scripts/build/e2e-generated-tsconfig.json
+*.css.ts
+
+stats.json
+
+# demo stuff
+demos/node_modules
+demos/polyfills
+demos/css
+demos/fonts
+demos/src/**/*.js
+demos/src/**/*.map
+demos/src/**/*.ngfactory.ts
+demos/src/**/*.d.ts
+demos/src/**/*.metadata.json
+demos/src/**/*.css.shim.ts
+prerender.html
+prerender-domino.html
+prerender-hydrated.html
+prerender-static.html
+
+# stencil
+angular/css/
+packages/react/css/
+core/css/
+core/hydrate/
+core/loader/
+core/www/
+.stencil/
+angular/build/
+© 2020 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+
+plugins
+www
+ios

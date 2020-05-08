@@ -1,0 +1,61 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>ShoppingListItems</ion-title>
+        <ion-buttons slot="end">
+            <ion-button *ngIf="isEditMode" (click)="pushItem()">{{ 'SHOPPING_LIST_btn_done' | translate }}</ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-grid style="height: 100%; display: flex; flex-flow: column">
+        <ion-row>
+            <ion-col>
+                <div scrollY="true" id="myFixZone">
+                    <ion-list *ngIf="shoppingListItems.length > 0">
+                        <ion-item-sliding *ngFor="let listItem of shoppingListItems; let i = index">
+
+                            <ion-item button (click)="navigateToDetails(this.listItem.shoppingListItemId)">
+                                <ion-thumbnail slot="start">
+                                    <img src="{{imageBasePath}}/{{listItem.imagePath}}"  *ngIf="listItem.imagePath">
+                                    <ion-icon name="image-outline" *ngIf="!listItem.imagePath"></ion-icon>
+                                </ion-thumbnail>
+                                            <ion-input id="input-{{ listItem.shoppingListItemId }}"
+                                                       [(ngModel)]="listItem.title" (focusin)="onFocus(listItem)"
+                                                       (focusout)="onFocusOut(listItem)"></ion-input>
+
+
+                            </ion-item>
+                            <ion-item-options side="end">
+                                <ion-item-option color="danger" expandable
+                                                 (click)="deleteItemById(listItem.shoppingListItemId)">Delete
+                                </ion-item-option>
+                            </ion-item-options>
+                        </ion-item-sliding>
+                    </ion-list>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row class="fill-row">
+            <ion-col>
+                <ion-button class="fill-button" expand="full" fill="clear" (click)="pushItem()"></ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar style="height: 80px" (click)="pushItem()" *ngIf="!isEditMode">
+        <ion-buttons slot="end">
+            <ion-button id="changeText" (click)="pushItem()" style="height: 100px">
+                <ion-icon name="add-circle" style="font-size: 50px; padding-bottom: 25px"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-footer>
